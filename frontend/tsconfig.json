@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": 
+    "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "src/app/navbar.jsx", "src/app/signup/page.jsx", "src/app/camera/page.jsx", "src/app/leave/RecentLeave.jsx", "src/app/leave/holiday-calendar/page.jsx", "src/app/leave/LeaveRemaining.jsx", "src/app/verification/page.jsx", "src/app/forgot-password/validation/page.jsx", "src/Helpers/CountHours.js", "src/app/admin/dashboard/DashCards.jsx", "src/app/admin/holiday/page.jsx", "src/app/profile/page.jsx", "src/app/reports/page.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
