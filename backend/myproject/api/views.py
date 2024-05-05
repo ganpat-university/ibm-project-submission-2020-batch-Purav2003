@@ -26,6 +26,9 @@ from django.http import JsonResponse
 from datetime import date
 from django.utils import timezone
 from django.conf import settings
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 @api_view(['POST'])
@@ -115,8 +118,8 @@ def signup(request):
 
 
 def send_otp_email(receiver_email, otp):
-    sender_email = "shahpurav308@gmail.com"
-    sender_password = "npgb ndoe saio zghl"
+    sender_email = os.getenv('EMAIL')
+    sender_password = os.getenv('EMAIL_PASSWORD')
     # Send the OTP to the user's email using Django's send_mail function
     subject = f'Otp for verification'
     message_content = f'''
@@ -200,8 +203,8 @@ def send_otp_email(receiver_email, otp):
     
     
 def send_verification_mail(receiver_email, companyName,userName,admin_email):
-    sender_email = "shahpurav308@gmail.com"
-    sender_password = "npgb ndoe saio zghl"
+    sender_email = os.getenv('EMAIL')
+    sender_password = os.getenv('EMAIL_PASSWORD')
     # Send the OTP to the user's email using Django's send_mail function
     subject = f'Welcome to the wokspace of {companyName}'
     message_content = f'''
@@ -285,8 +288,8 @@ def send_verification_mail(receiver_email, companyName,userName,admin_email):
         server.sendmail(sender_email, receiver_email, message.as_string())
     
 def send_rejection_mail(receiver_email, companyName,userName,admin_email):
-    sender_email = "shahpurav308@gmail.com"
-    sender_password = "npgb ndoe saio zghl"
+    sender_email = os.getenv('EMAIL')
+    sender_password = os.getenv('EMAIL_PASSWORD')
     # Send the OTP to the user's email using Django's send_mail function
     subject = f'Welcome to the wokspace of {companyName}'
     message_content = f'''
